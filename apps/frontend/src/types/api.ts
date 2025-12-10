@@ -6,6 +6,6 @@ export interface Purchase {
 export interface Customer {
   id: string;
   name: string;
-  totalAmount: number;
-  // 필요하면 더 필드 추가
+  count: number | string;
+  totalAmount: number | string;
 }

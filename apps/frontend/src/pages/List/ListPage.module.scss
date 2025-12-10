@@ -1,0 +1,21 @@
+.ListPage {
+  @apply flex flex-col gap-y-5;
+
+  .Filters {
+    @apply flex gap-x-2 items-end;
+
+    .Filter {
+      @apply flex flex-col gap-y-1 text-left;
+      .Label {
+        @apply text-xs;
+      }
+      input {
+        @apply border p-2 rounded-[8px];
+      }
+    }
+
+    .Btn {
+      @apply text-sm font-bold;
+    }
+  }
+}

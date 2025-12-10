@@ -74,7 +74,10 @@ function ChartPage() {
 
       <BarChart data={data} />
 
-      <Link to="/">메인페이지로 이동</Link>
+      <div className="flex gap-x-5">
+        <Link to="/">메인페이지로 이동</Link>
+        <Link to="/list">고객리스트 조회하러 가기</Link>
+      </div>
     </div>
   );
 }
