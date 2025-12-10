@@ -5,6 +5,7 @@ import classNames from 'classNames';
 import dayjs from 'dayjs';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
+import { Link } from 'react-router-dom';
 
 interface ParamProps {
   from: Date | null;
@@ -72,6 +73,8 @@ function ChartPage() {
       </div>
 
       <BarChart data={data} />
+
+      <Link to="/">메인페이지로 이동</Link>
     </div>
   );
 }
