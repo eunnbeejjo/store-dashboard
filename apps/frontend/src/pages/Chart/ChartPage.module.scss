@@ -1,2 +1,22 @@
 .ChartPage {
+  @apply flex flex-col gap-y-5;
+
+  .Title {
+    @apply text-xl font-bold text-left;
+  }
+
+  .Filters {
+    @apply flex gap-x-2 items-end;
+
+    .Filter {
+      @apply flex flex-col gap-y-1 text-left;
+      .Label {
+        @apply text-xs;
+      }
+    }
+
+    .Btn {
+      @apply text-sm font-bold;
+    }
+  }
 }
