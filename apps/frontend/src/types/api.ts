@@ -9,3 +9,11 @@ export interface Customer {
   count: number | string;
   totalAmount: number | string;
 }
+
+export interface Detail {
+  date: string;
+  quantity: number;
+  product: string;
+  price: number;
+  imgSrc: string;
+}

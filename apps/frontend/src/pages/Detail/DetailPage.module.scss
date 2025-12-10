@@ -1,0 +1,11 @@
+.DetailPage {
+  @apply flex flex-col gap-y-5;
+
+  .Title {
+    @apply text-xl font-bold text-left;
+  }
+
+  .Thumbnail {
+    @apply w-[100px] h-[100px] rounded-[8px] overflow-hidden;
+  }
+}

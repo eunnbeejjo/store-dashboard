@@ -3,16 +3,21 @@ import Table, {
   OrderDirectionTypeEnum,
 } from '../../components/Table/Table';
 import { useCustomers } from '../../hooks/useCustomers';
+import useStore from '../../store/store';
 import s from './ListPage.module.scss';
 import classNames from 'classNames';
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 interface Props {
   name?: string;
 }
 
 function ListPage() {
+  const navigate = useNavigate();
+
+  const { setInfo } = useStore();
+
   const [name, setName] = useState<string>();
   const [sortDir, setSortDir] = useState<OrderDirectionTypeEnum | null>(null);
   const [params, setParams] = useState<Props>();
@@ -30,7 +35,7 @@ function ListPage() {
   });
 
   const headers: DTableHeader[] = [
-    { key: 'id', name: 'id' },
+    { key: 'id', name: 'ID' },
     { key: 'name', name: '이름' },
     { key: 'count', name: '총 구매 횟수' },
     { key: 'totalAmount', name: '총 구매 금액', sortColumn: true },
@@ -101,12 +106,18 @@ function ListPage() {
         onSortChange={(orderDirection: OrderDirectionTypeEnum) => {
           setSortDir(orderDirection);
         }}
+        onClickRow={(row) => {
+          setInfo(row);
+          navigate(`${row.id}`);
+        }}
       />
 
       <div className="flex gap-x-5">
         <Link to="/">메인페이지로 이동</Link>
         <Link to="/chart">구매 빈도 차트 조회하러 가기</Link>
       </div>
+
+      <Outlet />
     </div>
   );
 }
